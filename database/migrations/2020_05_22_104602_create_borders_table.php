@@ -26,7 +26,7 @@ class CreateBordersTable extends Migration
             $table->string('purpose');
             $table->string('destination');
             $table->string('border_name');
-            $table->string('path');
+            $table->integer('path');
         });
     }
 

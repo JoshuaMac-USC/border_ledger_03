@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <title>User Management</title>
-
+@error('password')
+<span class=”invalid-feedback” role=”alert”>
+<strong>{{ $message }}</strong>
+</span>
+@enderror
 @if(Auth::User()->is_admin==1)
 <!-- BUTTON TRIGGER -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ingoing">
@@ -10,7 +14,7 @@
 @endif
 <!-- Modal -->
 <div class="modal fade" id="ingoing" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
@@ -22,8 +26,7 @@
       <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -75,8 +78,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
         </div>
     </div>
 </div>

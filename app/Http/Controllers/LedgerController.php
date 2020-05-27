@@ -15,7 +15,9 @@ class LedgerController extends Controller
 
 
         $person = new Border();
-        
+        $validate = $request->validate([
+            'age' => ['required', 'integer']
+        ]);
         $person->fname = request('fname');
         $person->lname = request('lname');
         $person->age = request('age');
@@ -32,5 +34,27 @@ class LedgerController extends Controller
         $person->save();
 
         return redirect('/ledgers');
+    }
+
+    public function dataAjax(Request $request)
+    {
+      $search = $request->search;
+
+      if($search == ''){
+         $locations = Border::orderby('border_name','asc')->select('id','border_name')->limit(5)->get();
+      }else{
+         $locations = Border::orderby('border_name','asc')->select('id','border_name')->where('border_name', 'like', '%' .$search . '%')->limit(5)->get();
+      }
+
+      $response = array();
+      foreach($locations as $location){
+         $response[] = array(
+              "id"=>$location->border_name,
+              "text"=>$location->border_name
+         );
+      }
+
+      echo json_encode($response);
+      exit;
     }
 }
