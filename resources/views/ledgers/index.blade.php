@@ -5,7 +5,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}">
-
 <!-- INGOING TRIGGER -->
 <div class="px-2">
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ingoing">
@@ -44,7 +43,7 @@
     <div class="form-group">
     <label for="age">Age:</label>
     <div class="col-sm-10">
-    <input type="text" class="form-control" id="age" name="age" required>
+    <input type="number" class="form-control" id="age" name="age" required>
     </div>
     </div>
     <div class="form-group">
@@ -74,15 +73,13 @@
     <div class="form-group">
     <label for="purpose">Purpose:</label>
     <div class="col-sm-10">
-    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" required>
-    </textarea>    
+    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" required></textarea>    
     </div>
     </div>
     <div class="form-group">
     <label for="destination">Destination:</label>
     <div class="col-sm-10">
-    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" required>
-    </textarea>  
+    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" required></textarea>  
     </div>
     </div>
     <div class="form-group">
@@ -144,7 +141,7 @@
     <div class="form-group">
     <label for="age">Age:</label>
     <div class="col-sm-10">
-    <input type="text" class="form-control" id="age" name="age" required>
+    <input type="number" class="form-control" id="age" name="age" required>
     </div>
     </div>
     <div class="form-group">
@@ -208,6 +205,11 @@
 </div>
 
 <br><br>
+@error('age')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+@enderror
 <table class="table table-striped">
          <thead>
          <tr>

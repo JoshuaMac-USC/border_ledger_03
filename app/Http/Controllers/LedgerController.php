@@ -18,6 +18,8 @@ class LedgerController extends Controller
         $person = new Border();
         $validate = $request->validate([
             'age' => ['required', 'integer']
+        ],[
+            'age.integer' => 'Age field contains invalid input'
         ]);
         $person->fname = request('fname');
         $person->lname = request('lname');
@@ -37,7 +39,7 @@ class LedgerController extends Controller
         
         $person->save();
 
-        return redirect('/ledgers');
+        return redirect('/ledgers')->with('message','your message');
     }
 
     public function dataAjax(Request $request)
