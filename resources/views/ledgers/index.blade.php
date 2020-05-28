@@ -5,102 +5,104 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <!-- INGOING TRIGGER -->
 <div class="px-2">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ingoing">
-  Going In
-</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ingoing">
+    Going In
+  </button>
 <!-- Modal -->
-<div class="modal fade" id="ingoing"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+<div class="modal fade" id="ingoing" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
+      
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Going In</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Passerby Form (Going In)</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <div class="modal-body">
-      <div class="container">
-    <div class="row justify-content-center">
-      <div class="wrapper create-ledger">
-    <h1>Passerby Form</h1>
+   
 
-    <form class="form-horizontal" action="/ledgers" method="POST">
-    @csrf
-    <div class="form-group">
-    <label for="fname">First Name:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="fname" name="fname" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="lname">Last Name:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="lname" name="lname" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="age">Age:</label>
-    <div class="col-sm-10">
-    <input type="number" class="form-control" id="age" name="age" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="id_type">ID Type:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="id_type" name="id_type" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="id_number">ID Number:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="id_number" name="id_number" required>    
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="mode_of_transpo">Mode of Transportation:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="mode_of_transpo" name="mode_of_transpo" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="vplatenum">Plate Number:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="vplatenum" name="vplatenum">  
-    </div>
-    </div> 
-    <div class="form-group">
-    <label for="purpose">Purpose:</label>
-    <div class="col-sm-10">
-    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" required></textarea>    
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="destination">Destination:</label>
-    <div class="col-sm-10">
-    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" required></textarea>  
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="border_name">Border Name:</label>
-    <div class="col-sm-10">
-                  <select style="width:150px" name="border_name" id="border_name" class="form-control" required> 
-                <option value=''></option>
-                  </select>
-    </div>
-    </div>
-   <input name="path" type="hidden" value="1">
-</div>
-      </div>
-      <div class="modal-footer">
-      <input type="submit" class="btn btn-secondary" value="Add Record">
-    </form>
+              <form action="/ledgers" method="POST">
+              @csrf
+                <div class="row">
+                  <div class="col">
+                    <label for="fname ">First Name:</label>
+                    <input type="text" class="form-control" id="fname" name="fname" required>
+                  </div>
+                  
+                  <div class="col">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" class="form-control" id="lname" name="lname" required>
+                  </div>
+
+                  
+                  <div class="col">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                  </div>
+                </div>
+
+                <div class="row pb-1 pt-2">               
+                  <div class="col">
+                    <label for="id_type">ID Type:</label>
+                    <input type="text" class="form-control" id="id_type" name="id_type" required>
+                  </div>
+
+                  <div class="col">
+                    <label for="id_number">ID Number:</label>
+                    <input type="text" class="form-control" id="id_number" name="id_number" required>    
+                  </div>
+                </div>
+                
+                <div class="row pb-1">                 
+                  <div class="col">
+                    <label for="mode_of_transpo">Mode of Transportation:</label>
+                    <input type="text" class="form-control" id="mode_of_transpo" name="mode_of_transpo" required>
+                  </div>
+                </div>
+                
+                <div class="row pb-1">                  
+                  <div class="col">
+                    <label for="vplatenum">Plate Number:</label>
+                    <input type="text" class="form-control" id="vplatenum" name="vplatenum">  
+                  </div>
+                </div> 
+                
+                <div class="row">
+                  <div class="col">
+                    <label for="purpose">Purpose:</label>
+                    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" required></textarea>    
+                  </div>
+
+                  <div class="col">
+                    <label for="destination">Destination:</label>
+                    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" required></textarea>  
+                  </div>
+                </div>
+
+                
+                <div class="row pb-1">
+                  <div class="col"><br>
+                    <label for="border_name">Border Name:</label>
+                    <select style="width:350px" name="border_name" id="border_name" class="form-control" required> 
+                    <option value=''></option>
+                    </select>
+                  </div>
+                </div>
+                
+                <input name="path" type="hidden" value="1">
+                
+                <div class="modal-footer">
+                  <input type="submit" class="btn btn-secondary" value="Add Record">
+                </form>
+                </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>
 
 <!-- OUTGOING TRIGGER -->
@@ -109,107 +111,100 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="outgoing" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+<div class="modal fade" id="outgoing" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
+      
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Going Out</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Passerby Form (Going Out)</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <div class="modal-body">
-      <div class="container">
-    <div class="row justify-content-center">      
-      <div class="wrapper create-ledger">
-    <h1>Passerby Form</h1>
+   
 
-    <form class="form-horizontal" action="/ledgers" method="POST">
-    @csrf
-    <div class="form-group">
-    <label for="fname">First Name:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="fname" name="fname" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="lname">Last Name:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="lname" name="lname" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="age">Age:</label>
-    <div class="col-sm-10">
-    <input type="number" class="form-control" id="age" name="age" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="id_type">ID Type:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="id_type" name="id_type" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="id_number">ID Number:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="id_number" name="id_number" required>    
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="mode_of_transpo">Mode of Transportation:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="mode_of_transpo" name="mode_of_transpo" required>
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="vplatenum">Plate Number:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="vplatenum" name="vplatenum">  
-    </div>
-    </div> 
-    <div class="form-group">
-    <label for="purpose">Purpose:</label>
-    <div class="col-sm-10">
-    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" required>
-    </textarea>    
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="destination">Destination:</label>
-    <div class="col-sm-10">
-    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" required>
-    </textarea>  
-    </div>
-    </div>
-    <div class="form-group">
-    <label for="border_name">Border Name:</label>
-    <div class="col-sm-10">
-                  <select style="width:150px" name="border_name" id="border_nameout" class="form-control" required> 
-                <option value=''></option>
-                  </select>
-    </div>
-    </div>
-   <input name="path" type="hidden" value="2">
+              <form action="/ledgers" method="POST">
+              @csrf
+                <div class="row">
+                  <div class="col">
+                    <label for="fname">First Name:</label>
+                    <input type="text" class="form-control" id="fname" name="fname" required>
+                  </div>
+                  
+                  <div class="col">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" class="form-control" id="lname" name="lname" required>
+                  </div>
 
-</div>
-      </div>
-      <div class="modal-footer">
-      <input type="submit" class="btn btn-secondary" value="Add Record">
-    </form>
+                  
+                  <div class="col">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                  </div>
+                </div>
+                
+                <div class="row pb-1 pt-2">               
+                  <div class="col">
+                    <label for="id_type">ID Type:</label>
+                    <input type="text" class="form-control" id="id_type" name="id_type" required>
+                  </div>
+
+                  <div class="col">
+                    <label for="id_number">ID Number:</label>
+                    <input type="text" class="form-control" id="id_number" name="id_number" required>    
+                  </div>
+                </div>
+              
+                <div class="row pb-1">                 
+                  <div class="col">
+                    <label for="mode_of_transpo">Mode of Transportation:</label>
+                    <input type="text" class="form-control" id="mode_of_transpo" name="mode_of_transpo" required>
+                  </div>
+                </div>
+                
+                <div class="row pb-1">                  
+                  <div class="col">
+                    <label for="vplatenum">Plate Number:</label>
+                    <input type="text" class="form-control" id="vplatenum" name="vplatenum">  
+                  </div>
+                </div> 
+                
+                <div class="row pb-1">
+                  <div class="col">
+                    <label for="purpose">Purpose:</label>
+                    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" required></textarea>    
+                  </div>
+
+                  <div class="col">
+                    <label for="destination">Destination:</label>
+                    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" required></textarea>  
+                  </div>
+                </div>
+
+                
+                <div class="row pb-1">
+                  <div class="col"><br>
+                    <label for="border_name">Border Name:</label>
+                    <select style="width:350px" name="border_name" id="border_nameout" class="form-control" required> 
+                    <option value=''></option>
+                    </select>
+                  </div>
+                </div>
+                
+                <input name="path" type="hidden" value="2">
+                
+                <div class="modal-footer">
+                  <input type="submit" class="btn btn-secondary" value="Add Record">
+                </form>
+                </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-</div>
 
 <br><br>
-@error('age')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-@enderror
 <table class="table table-striped">
          <thead>
          <tr>
@@ -246,98 +241,96 @@
                 View
               </button>
               
-              <!--Information View Modal -->
-    <div class="modal fade" id="viewinfo-{{ $ledger->id }}" tabindex="-1" role="dialog" aria-labelledby="viewinfo-{{ $ledger->id }} aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="viewinfo-{{ $ledger->id }}">Ledger Information</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+<!--Information View Modal -->
+<div class="modal fade" id="viewinfo-{{ $ledger->id }}" tabindex="-1" role="dialog" aria-labelledby="viewinfo-{{ $ledger->id }} aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewinfo-{{ $ledger->id }}">Ledger Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <div class="modal-body">
-      <div class="container">
-      <div class="row justify-content-center">  
+        <form action="#">
+          <div class="row">
+            <div class="col">
+            <label>Full Name:</label>
+            <input type="text" value=" {{$ledger->fname}} {{$ledger->lname}}" readonly>
+            </div> 
+          </div>
 
-      <form class="form-horizontal" action="#">
-  <div class="form-group">
-    <label class="control-label">Full Name:</label>
-    <div class="col-sm-10">
-    <input type="text" value="{{$ledger->fname}} {{$ledger->lname}}" readonly>
-    </div>
-  </div>
+          <div class="row">
+            <div class="col">
+              <label>Age:</label>
+              <input type="text" value="{{$ledger->age}}" readonly>
+               
+              </div> 
+          </div>
 
-  <div class="form-group">
-    <label class="control-label">Age:</label>
-    <div class="col-sm-10">
-    <input type="text" value="{{$ledger->age}}" readonly>
-    </div>
-  </div>
+          <div class="row">
+            <div class="col">
+            <label>ID Type:</label>
+            <input type="text" value=" {{$ledger->id_type}}" readonly>
+             
+            </div>    
+          </div>
 
-  <div class="form-group">
-    <label class="control-label">ID Type:</label>
-    <div class="col-sm-10">
-    <input type="text" value="{{$ledger->id_type}}" readonly>
-    </div>
-  </div>
+          <div class="row">
+          <div class="col">
+             <label>ID Number:</label>
+             <input type="text" value=" {{$ledger->id_number}}" readonly>
+              
+            </div> 
+          </div>
 
-  <div class="form-group">
-    <label class="control-label">ID Number:</label>
-    <div class="col-sm-10">
-    <input type="text" value="{{$ledger->id_number}}" readonly>
-    </div>
-  </div>
+          <div class="row">
+            <div class="col">
+            <label>Mode of Transportation:</label>
+            <input type="text" value="{{$ledger->mode_of_transpo}}" readonly>
+            
+            </div> 
+          </div>     
 
-  <div class="form-group">
-    <label class="control-label">Mode of Transportation:</label>
-    <div class="col-sm-10">
-    <input type="text" value="{{$ledger->mode_of_transpo}}" readonly>
-    </div>
-  </div>
-  @if(!is_null($ledger->vplatenum))
-  <div class="form-group">
-    <label class="control-label">Plate Number:</label>
-    <div class="col-sm-10">
-    <input type="text" value="{{$ledger->vplatenum}}" readonly>
-    </div>
-  </div>
-  @endif
-  <div class="form-group">
-    <label class="control-label">Purpose:</label>
-    <div class="col-sm-10">
-    <textarea class="form-control" rows="2" cols="30" readonly>
-    {{$ledger->purpose}}
-    </textarea>    
-    </div>
-  </div>
+          @if(!is_null($ledger->vplatenum))
+          <div class="row">
+              <div class="col">
+              <label>Plate Number:</label>
+              <input type="text" value="{{$ledger->vplatenum}}" readonly>
+          
+              </div>
+          </div>
+          @endif
+                                
+          <div class="row">
+            <div class="col">
+            <label>Purpose:</label>
+              <textarea class="form-control" rows="2" cols="30" readonly>{{$ledger->purpose}}</textarea>  
+              </div>   
+          </div>
+          
+          <div class="row">
+            <div class="col">
+            <label>Destination:</label>
+              <textarea class="form-control" rows="2" cols="30" readonly>{{$ledger->destination}}</textarea>
+              </div>     
+          </div>
 
+          <div class="row">
+            <div class="col"><br>
+            <label>Border Name:</label>
+              <input type="text" value="{{$ledger->border_name}}" readonly>
+              </div> 
+          </div>
 
-  <div class="form-group">
-    <label class="control-label">Destination:</label>
-    <div class="col-sm-10">
-    <textarea class="form-control" rows="2" cols="30" readonly>
-    {{$ledger->destination}}
-    </textarea>    
+          </form>
+          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
     </div>
-  </div>
-
-  <div class="form-group">
-    <label class="control-label">Border Name:</label>
-    <div class="col-sm-10">
-    <input type="text" value="{{$ledger->border_name}}" readonly>
-    </div>
-  </div>
-
-      </form>
-    </div>
-   </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
   </div>
 </div>
 </td>
@@ -373,6 +366,7 @@ $('#border_name').select2({
           cache: true
         }
 }),
+
 $('#border_nameout').select2({
   placeholder: 'Select border',
   tags: true,
@@ -395,5 +389,7 @@ $('#border_nameout').select2({
           cache: true
         }
 });
+
+
 </script>
 @endsection

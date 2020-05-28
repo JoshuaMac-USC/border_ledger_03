@@ -40,11 +40,10 @@ class UserController extends Controller
                     'fname' => ['required', 'string', 'max:255'],
                     'lname' => ['required', 'string', 'max:255'],
                     'email' => ['required', 'string', 'email', 'max:255'],
-                    'password' => ['required', 'string', 'min:8','max:24'],
+                    'password' => ['required', 'string', 'min:8'],
                     'dob' => ['required', ],
                 ],[
                     'password.min' => 'Password has not been changed, minimum 8 characters',
-                    'password.max' => 'Password has not been changed',
                     'email.unique' => 'Email already exists'
 
                 ]);
