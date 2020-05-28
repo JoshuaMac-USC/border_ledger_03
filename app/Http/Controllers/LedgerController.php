@@ -32,7 +32,7 @@ class LedgerController extends Controller
         $person->path = request('path');
       
         Location::firstOrCreate([
-            'location' => $person->border_name
+            'location_name' => $person->border_name
         ]);
         
         $person->save();
@@ -45,16 +45,16 @@ class LedgerController extends Controller
       $search = $request->search;
 
       if($search == ''){
-         $locations = Location::orderby('location','asc')->select('id','location')->limit(5)->get();
+         $locations = Location::orderby('location_name','asc')->select('id','location_name')->limit(5)->get();
       }else{
-         $locations = Location::orderby('location','asc')->select('id','location')->where('location', 'like', '%' .$search . '%')->limit(5)->get();
+         $locations = Location::orderby('location_name','asc')->select('id','location_name')->where('location_name', 'like', '%' .$search . '%')->limit(5)->get();
       }
 
       $response = array();
       foreach($locations as $location){
          $response[] = array(
-              "id"=>$location->location,
-              "text"=>$location->location
+              "id"=>$location->location_name,
+              "text"=>$location->location_name
          );
       }
 
