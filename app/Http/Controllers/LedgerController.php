@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Border;
+use App\Location;
 class LedgerController extends Controller
 {
     public function index(){
@@ -13,7 +14,7 @@ class LedgerController extends Controller
 
     public function store(Request $request){
 
-
+        $place = new Location();
         $person = new Border();
         $validate = $request->validate([
             'age' => ['required', 'integer']
@@ -30,6 +31,9 @@ class LedgerController extends Controller
         $person->border_name = request('border_name');
         $person->path = request('path');
       
+        Location::firstOrCreate([
+            'location' => $person->border_name
+        ]);
         
         $person->save();
 
@@ -41,16 +45,16 @@ class LedgerController extends Controller
       $search = $request->search;
 
       if($search == ''){
-         $locations = Border::orderby('border_name','asc')->select('id','border_name')->limit(5)->get();
+         $locations = Location::orderby('location','asc')->select('id','location')->limit(5)->get();
       }else{
-         $locations = Border::orderby('border_name','asc')->select('id','border_name')->where('border_name', 'like', '%' .$search . '%')->limit(5)->get();
+         $locations = Location::orderby('location','asc')->select('id','location')->where('location', 'like', '%' .$search . '%')->limit(5)->get();
       }
 
       $response = array();
       foreach($locations as $location){
          $response[] = array(
-              "id"=>$location->border_name,
-              "text"=>$location->border_name
+              "id"=>$location->location,
+              "text"=>$location->location
          );
       }
 
