@@ -342,6 +342,10 @@ legend {
   text-transform: uppercase;
   float: right;
 }
+.links > a:hover {
+  color: #636b6f;
+  text-decoration: none;
+}
 
 progress {
   vertical-align: baseline;

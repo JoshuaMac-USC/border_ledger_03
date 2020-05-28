@@ -13,7 +13,7 @@
 </button>
 <!-- Modal -->
 <div class="modal fade" id="ingoing"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Going In</h5>
@@ -25,7 +25,7 @@
       <div class="container">
     <div class="row justify-content-center">
       <div class="wrapper create-ledger">
-    <h1>Create a new record</h1>
+    <h1>Passerby Form</h1>
 
     <form class="form-horizontal" action="/ledgers" method="POST">
     @csrf
@@ -113,7 +113,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="outgoing" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Going Out</h5>
@@ -125,7 +125,7 @@
       <div class="container">
     <div class="row justify-content-center">      
       <div class="wrapper create-ledger">
-    <h1>Create a new record</h1>
+    <h1>Passerby Form</h1>
 
     <form class="form-horizontal" action="/ledgers" method="POST">
     @csrf
@@ -371,7 +371,6 @@ $('#border_name').select2({
           cache: true
         }
 }),
-
 $('#border_nameout').select2({
   placeholder: 'Select border',
   tags: true,
@@ -394,7 +393,5 @@ $('#border_nameout').select2({
           cache: true
         }
 });
-
-
 </script>
 @endsection
