@@ -1,11 +1,18 @@
 @extends('layouts.app')
 @section('content')
 <title>User Management</title>
+<center>
 @error('password')
 <span class=”invalid-feedback” role=”alert”>
 <strong>{{ $message }}</strong>
 </span>
 @enderror
+@error('email')
+<span class=”invalid-feedback” role=”alert”>
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+</center>
 @if(Auth::User()->is_admin==1)
 <div class="px-2">
 <!-- BUTTON TRIGGER -->
