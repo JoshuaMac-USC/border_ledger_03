@@ -391,9 +391,4 @@ $('#border_nameout').select2({
         }
 });
 </script>
-<script type="text/javascript">
-          @if (count($errors) > 0)
-          $('#usermanage').modal('show');
-          @endif
-        </script>
 @endsection
