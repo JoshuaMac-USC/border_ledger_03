@@ -12,7 +12,7 @@
     Going In
   </button>
 <!-- Modal -->
-<div class="modal fade" id="ingoing" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ingoing"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       
@@ -111,7 +111,7 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="outgoing" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="outgoing"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       
