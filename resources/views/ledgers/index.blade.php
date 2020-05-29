@@ -44,7 +44,7 @@
                     <label for="age">Age:</label>
                     <input type="number" class="form-control @error('age') is-invalid @enderror" id="age" name="age" required>
                     @error('age')
-                    <span class=”invalid-feedback” role=”alert”>
+                    <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                     </span>
                     @enderror  
@@ -246,8 +246,7 @@
                 View
               </button>
               
-<!--Information View Modal -->
-<div class="modal fade" id="viewinfo-{{ $ledger->id }}" tabindex="-1" role="dialog" aria-labelledby="viewinfo-{{ $ledger->id }} aria-hidden="true">
+              <div class="modal fade" id="viewinfo-{{ $ledger->id }}" role="dialog" aria-labelledby="viewinfo-{{ $ledger->id }} aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       
@@ -260,73 +259,70 @@
       
       <div class="modal-body">
         <form action="#">
-          <div class="row">
-            <div class="col">
-            <label>Full Name:</label>
-            <input type="text" value=" {{$ledger->fname}} {{$ledger->lname}}" readonly>
-            </div> 
-          </div>
 
           <div class="row">
+
+            <div class="col">
+            <label>First Name:</label>
+            <input class ="form-control" type="text" value=" {{$ledger->fname}}" readonly>
+            </div> 
+            
+            <div class="col">
+            <label>Last Name:</label>
+            <input class ="form-control" type="text" value="{{$ledger->lname}}" readonly>
+            </div> 
+
             <div class="col">
               <label>Age:</label>
-              <input type="text" value="{{$ledger->age}}" readonly>
-               
+              <input class ="form-control" type="text" value="{{$ledger->age}}" readonly>
               </div> 
           </div>
 
-          <div class="row">
+          <div class="row pb-1 pt-2">
             <div class="col">
             <label>ID Type:</label>
-            <input type="text" value=" {{$ledger->id_type}}" readonly>
-             
-            </div>    
-          </div>
+            <input class ="form-control" type="text" value=" {{$ledger->id_type}}" readonly>
+            </div>
 
-          <div class="row">
-          <div class="col">
+            <div class="col">
              <label>ID Number:</label>
-             <input type="text" value=" {{$ledger->id_number}}" readonly>
-              
-            </div> 
+             <input class ="form-control" type="text" value=" {{$ledger->id_number}}" readonly>  
+            </div>     
           </div>
 
-          <div class="row">
+          <div class="row pb-1">
             <div class="col">
             <label>Mode of Transportation:</label>
-            <input type="text" value="{{$ledger->mode_of_transpo}}" readonly>
+            <input class ="form-control" type="text" value="{{$ledger->mode_of_transpo}}" readonly>
             
             </div> 
           </div>     
 
           @if(!is_null($ledger->vplatenum))
-          <div class="row">
+          <div class="row pb-1">
               <div class="col">
               <label>Plate Number:</label>
-              <input type="text" value="{{$ledger->vplatenum}}" readonly>
-          
+              <input class ="form-control" type="text" value="{{$ledger->vplatenum}}" readonly>
               </div>
           </div>
           @endif
                                 
-          <div class="row">
+          <div class="row pb-1">
             <div class="col">
             <label>Purpose:</label>
               <textarea class="form-control" rows="2" cols="30" readonly>{{$ledger->purpose}}</textarea>  
-              </div>   
-          </div>
-          
-          <div class="row">
+            </div>
+
             <div class="col">
             <label>Destination:</label>
               <textarea class="form-control" rows="2" cols="30" readonly>{{$ledger->destination}}</textarea>
-              </div>     
+            </div>     
           </div>
 
           <div class="row">
-            <div class="col"><br>
+            <div class="col">
             <label>Border Name:</label>
-              <input type="text" value="{{$ledger->border_name}}" readonly>
+              <input class="form-control" type="text" value="{{$ledger->border_name}}" readonly>
               </div> 
           </div>
 
