@@ -390,7 +390,10 @@ $('#border_nameout').select2({
           cache: true
         }
 });
-
-
 </script>
+<script type="text/javascript">
+          @if (count($errors) > 0)
+          $('#usermanage').modal('show');
+          @endif
+        </script>
 @endsection

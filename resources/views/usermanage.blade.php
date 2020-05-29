@@ -4,18 +4,18 @@
 @if(Auth::User()->is_admin==1)
 <div class="px-2">
 <!-- BUTTON TRIGGER -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ingoing">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#usermanage">
   Add User
 </button>
 </div>
 @endif
 <!-- Modal -->
-<div class="modal fade" id="ingoing" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="usermanage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+        <h5 class="modal-title" id="usermanage">Add User</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
@@ -113,4 +113,11 @@
          </tbody>
       </table>
       {{ $users->links() }}
+
+
+      <script type="text/javascript">
+          @if (count($errors) > 0)
+          $('#usermanage').modal('show');
+          @endif
+        </script>
 @endsection
