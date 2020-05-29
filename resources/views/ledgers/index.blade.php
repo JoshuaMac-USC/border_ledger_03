@@ -42,7 +42,12 @@
                   
                   <div class="col">
                     <label for="age">Age:</label>
-                    <input type="number" class="form-control" id="age" name="age" required>
+                    <input type="number" class="form-control @error('age') is-invalid @enderror" id="age" name="age" required>
+                    @error('age')
+                    <span class=”invalid-feedback” role=”alert”>
+                    <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror  
                   </div>
                 </div>
 

@@ -1,18 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <title>User Management</title>
-<center>
-@error('password')
-<span class=”invalid-feedback” role=”alert”>
-<strong>{{ $message }}</strong>
-</span>
-@enderror
-@error('email')
-<span class=”invalid-feedback” role=”alert”>
-<strong>{{ $message }}</strong>
-</span>
-@enderror
-</center>
 @if(Auth::User()->is_admin==1)
 <div class="px-2">
 <!-- BUTTON TRIGGER -->
@@ -49,11 +37,21 @@
         <div class="form-group">
         <label for="email">{{ __('E-Mail Address') }}</label>                                       
         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+        @error('email')
+        <span class=”invalid-feedback” role=”alert”>
+        <strong>{{ $message }}</strong>
+        </span>
+        @enderror  
         </div>
 
         <div class="form-group">
         <label for="password">{{ __('Password') }}</label>
         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+        @error('password')
+          <span class=”invalid-feedback” role=”alert”>
+          <strong>{{ $message }}</strong>
+          </span>
+          @enderror
         </div>
 
         <div class="form-group">

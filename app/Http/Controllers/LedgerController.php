@@ -17,9 +17,9 @@ class LedgerController extends Controller
         $place = new Location();
         $person = new Border();
         $validate = $request->validate([
-            'age' => ['required', 'integer']
+            'age' => ['required', 'numeric']
         ],[
-            'age.integer' => 'Age field contains invalid input'
+            'age.numeric' => 'Invalid input'
         ]);
         $person->fname = request('fname');
         $person->lname = request('lname');
