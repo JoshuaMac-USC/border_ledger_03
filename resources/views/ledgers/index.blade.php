@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,7 +14,6 @@
 <div class="modal fade" id="ingoing"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Passerby Form (Going In)</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -42,8 +40,13 @@
                   
                   <div class="col">
                     <label for="age">Age:</label>
-                    <input type="number" class="form-control @error('age') is-invalid @enderror" id="age" name="age" required>
+                    <input type="text" class="form-control @error('age') is-invalid @enderror" id="age" name="age" required>
                     @error('age')
+                    <script type="text/javascript">
+                      @if (count($errors) > 0)
+                      $('#ingoing').modal('show');
+                      @endif
+                    </script>
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                     </span>
@@ -145,8 +148,18 @@
 
                   
                   <div class="col">
-                    <label for="age">Age:</label>
-                    <input type="number" class="form-control" id="age" name="age" required>
+                    <label for="text">Age:</label>
+                    <input type="text" class="form-control  @error('age_out') is-invalid @enderror" id="age_out" name="age_out" required>
+                    @error('age_out')
+                    <script type="text/javascript">
+                      @if (count($errors) > 0)
+                      $('#outgoing').modal('show');
+                      @endif
+                    </script>
+                    <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror  
                   </div>
                 </div>
                 
@@ -391,4 +404,7 @@ $('#border_nameout').select2({
         }
 });
 </script>
+
+
+
 @endsection

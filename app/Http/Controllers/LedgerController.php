@@ -16,14 +16,30 @@ class LedgerController extends Controller
 
         $place = new Location();
         $person = new Border();
-        $validate = $request->validate([
-            'age' => ['required', 'numeric']
-        ],[
-            'age.numeric' => 'Invalid input'
-        ]);
+        if(empty(request('age_out'))){
+            $validate = $request->validate([
+                'age' => ['required','numeric'],
+            ],[
+                'age.numeric' => 'Invalid Input'
+            ]);
+            $person->age = request('age');
+        }else{
+            $validate = $request->validate([
+                'age_out' => ['required','numeric']
+            ],[
+                'age_out.numeric' => 'Invalid Input',
+            ]);
+            $person->age = request('age_out');
+        }
+
+/*
+        $person->age = request('age');
+        if(empty($person->age)){
+            $person->age = request('age_out');
+        }
+*/
         $person->fname = request('fname');
         $person->lname = request('lname');
-        $person->age = request('age');
         $person->id_number = request('id_number');
         $person->id_type = request('id_type');
         $person->mode_of_transpo = request('mode_of_transpo');
