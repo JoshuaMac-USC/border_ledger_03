@@ -29,18 +29,18 @@
                 <div class="row">
                   <div class="col">
                     <label for="fname ">First Name:</label>
-                    <input type="text" class="form-control" id="fname" name="fname" required>
+                    <input type="text" class="form-control" id="fname" name="fname" value="{{ old('fname') }}" required>
                   </div>
                   
                   <div class="col">
                     <label for="lname">Last Name:</label>
-                    <input type="text" class="form-control" id="lname" name="lname" required>
+                    <input type="text" class="form-control" id="lname" name="lname" value="{{ old('lname') }}" required>
                   </div>
 
                   
                   <div class="col">
                     <label for="age">Age:</label>
-                    <input type="text" class="form-control @error('age') is-invalid @enderror" id="age" name="age" required>
+                    <input type="text" class="form-control @error('age') is-invalid @enderror" value="{{ old('age') }}" id="age" name="age" required>
                     @error('age')
                     <script type="text/javascript">
                       @if (count($errors) > 0)
@@ -57,38 +57,38 @@
                 <div class="row pb-1 pt-2">               
                   <div class="col">
                     <label for="id_type">ID Type:</label>
-                    <input type="text" class="form-control" id="id_type" name="id_type" required>
+                    <input type="text" class="form-control" value="{{ old('id_type') }}"  id="id_type" name="id_type" required>
                   </div>
 
                   <div class="col">
                     <label for="id_number">ID Number:</label>
-                    <input type="text" class="form-control" id="id_number" name="id_number" required>    
+                    <input type="text" class="form-control" value="{{ old('id_number') }}" id="id_number" name="id_number" required>    
                   </div>
                 </div>
                 
                 <div class="row pb-1">                 
                   <div class="col">
                     <label for="mode_of_transpo">Mode of Transportation:</label>
-                    <input type="text" class="form-control" id="mode_of_transpo" name="mode_of_transpo" required>
+                    <input type="text" class="form-control" id="mode_of_transpo" value="{{ old('mode_of_transpo') }}" name="mode_of_transpo" required>
                   </div>
                 </div>
                 
                 <div class="row pb-1">                  
                   <div class="col">
                     <label for="vplatenum">Plate Number:</label>
-                    <input type="text" class="form-control" id="vplatenum" name="vplatenum">  
+                    <input type="text" class="form-control" id="vplatenum" value="{{ old('vplatenum') }}" name="vplatenum">  
                   </div>
                 </div> 
                 
                 <div class="row">
                   <div class="col">
                     <label for="purpose">Purpose:</label>
-                    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" required></textarea>    
+                    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30"  value="{{ old('purpose') }}" required></textarea>    
                   </div>
 
                   <div class="col">
                     <label for="destination">Destination:</label>
-                    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" required></textarea>  
+                    <textarea id="destination" class="form-control" name="destination" rows="2" value="{{ old('destination') }}" cols="30" required></textarea>  
                   </div>
                 </div>
 
@@ -96,7 +96,7 @@
                 <div class="row pb-1">
                   <div class="col"><br>
                     <label for="border_name">Border Name:</label>
-                    <select style="width:350px" name="border_name" id="border_name" class="form-control" required> 
+                    <select style="width:350px" name="border_name" id="border_name" value="{{ old('border_name') }}" class="form-control" required> 
                     <option value=''></option>
                     </select>
                   </div>
@@ -138,18 +138,18 @@
                 <div class="row">
                   <div class="col">
                     <label for="fname">First Name:</label>
-                    <input type="text" class="form-control" id="fname" name="fname" required>
+                    <input type="text" class="form-control" value="{{ old('fname') }}" id="fname" name="fname" required>
                   </div>
                   
                   <div class="col">
                     <label for="lname">Last Name:</label>
-                    <input type="text" class="form-control" id="lname" name="lname" required>
+                    <input type="text" class="form-control" value="{{ old('lname') }}" id="lname" name="lname" required>
                   </div>
 
                   
                   <div class="col">
                     <label for="text">Age:</label>
-                    <input type="text" class="form-control  @error('age_out') is-invalid @enderror" id="age_out" name="age_out" required>
+                    <input type="text" class="form-control  @error('age_out') is-invalid @enderror" id="age_out" name="age_out" value="{{ old('age_out') }}" required>
                     @error('age_out')
                     <script type="text/javascript">
                       @if (count($errors) > 0)
@@ -166,38 +166,38 @@
                 <div class="row pb-1 pt-2">               
                   <div class="col">
                     <label for="id_type">ID Type:</label>
-                    <input type="text" class="form-control" id="id_type" name="id_type" required>
+                    <input type="text" class="form-control" id="id_type" name="id_type" value="{{ old('id_type') }}" required>
                   </div>
 
                   <div class="col">
                     <label for="id_number">ID Number:</label>
-                    <input type="text" class="form-control" id="id_number" name="id_number" required>    
+                    <input type="text" class="form-control" id="id_number" name="id_number" value="{{ old('id_number') }}" required>    
                   </div>
                 </div>
               
                 <div class="row pb-1">                 
                   <div class="col">
                     <label for="mode_of_transpo">Mode of Transportation:</label>
-                    <input type="text" class="form-control" id="mode_of_transpo" name="mode_of_transpo" required>
+                    <input type="text" class="form-control" id="mode_of_transpo" name="mode_of_transpo" value="{{ old('mode_of_transpo') }}" required>
                   </div>
                 </div>
                 
                 <div class="row pb-1">                  
                   <div class="col">
                     <label for="vplatenum">Plate Number:</label>
-                    <input type="text" class="form-control" id="vplatenum" name="vplatenum">  
+                    <input type="text" class="form-control" id="vplatenum" name="vplatenum" value="{{ old('vplatenum') }}">  
                   </div>
                 </div> 
                 
                 <div class="row pb-1">
                   <div class="col">
                     <label for="purpose">Purpose:</label>
-                    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" required></textarea>    
+                    <textarea id="purpose" class="form-control" name="purpose" rows="2" cols="30" value="{{ old('purpose') }}" required></textarea>    
                   </div>
 
                   <div class="col">
                     <label for="destination">Destination:</label>
-                    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" required></textarea>  
+                    <textarea id="destination" class="form-control" name="destination" rows="2" cols="30" value="{{ old('destination') }}" required></textarea>  
                   </div>
                 </div>
 
@@ -205,7 +205,7 @@
                 <div class="row pb-1">
                   <div class="col"><br>
                     <label for="border_name">Border Name:</label>
-                    <select style="width:350px" name="border_name" id="border_nameout" class="form-control" required> 
+                    <select style="width:350px" name="border_name" id="border_nameout" class="form-control" value="{{ old('border_name') }}" required> 
                     <option value=''></option>
                     </select>
                   </div>
